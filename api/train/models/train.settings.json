@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trains",
+  "info": {
+    "name": "train",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "intensity": {
+      "type": "biginteger",
+      "min": "1",
+      "max": "5"
+    },
+    "distance": {
+      "type": "float"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "fartlek",
+        "tempo_run",
+        "strength",
+        "speed_work",
+        "interval",
+        "uphill",
+        "easy_run"
+      ]
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "done": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "trainer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
