@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clubs",
+  "info": {
+    "name": "club",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "website": {
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "club"
+    },
+    "trainers": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "members": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}
