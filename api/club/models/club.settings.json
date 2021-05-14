@@ -42,6 +42,9 @@
     "members": {
       "plugin": "users-permissions",
       "collection": "user"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
